@@ -1,0 +1,19 @@
+{
+  "name": "rxjs_demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client": "npm run start --workspace=rxjs_react_app",
+    "server": "npm run start --workspace=rxjs_nest_app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duc-coder/rxjs_demo.git"
+  },
+  "author": "masanori",
+  "workspaces": [
+    "./rxjs_react_app",
+    "./rxjs_nest_app"
+  ]
+}
