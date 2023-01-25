@@ -1,8 +1,0 @@
-# Google App Engine generated folder
-appengine-generated/
-
-./rxjs_react_app/node_modules
-
-./rxjs_nest_app/node_modules
-
-.env
