@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "client": "npm run start -w=client",
+    "client": "npm start -w=client",
     "server": "npm run start:dev -w=server"
   },
   "repository": {

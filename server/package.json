@@ -67,13 +67,5 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  },
-    "repository": {
-    "type": "git",
-    "url": "git+https://github.com/duc-coder/rxjs_demo.git"
-  },
-    "bugs": {
-    "url": "https://github.com/duc-coder/rxjs_demo/issues"
-  },
-  "homepage": "https://github.com/duc-coder/rxjs_demo#readme"
+  }
 }
