@@ -1,24 +1,17 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.scss";
-import { map } from "lodash";
 import { AppRoutes } from "./routes";
 
 export interface Props {
-  children: React.ReactNode;
+  children?: JSX.Element;
 }
 
 function App() {
-  const mapRoutes = (
-    item: (typeof AppRoutes)[keyof typeof AppRoutes],
-    index: number
-  ) => <Route key={index} element={item.element} path={item.path} />;
+  const routes = createBrowserRouter(Object.values(AppRoutes));
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>{map(AppRoutes, mapRoutes)}</Routes>
-      </BrowserRouter>
+      <RouterProvider router={routes} />
     </div>
   );
 }

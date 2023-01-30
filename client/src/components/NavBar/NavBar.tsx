@@ -1,9 +1,8 @@
-import React from "react";
-import "./Home.scss";
+import "./NavBar.scss";
 import { Link } from "react-router-dom";
 import { AppRoutes } from "../../routes";
 
-const Home = () => (
+const NavBar = () => (
   <div className="Home" data-testid="Home">
     <p className="title">RxJS - A better asynchronous programming way</p>
     <p className="sub-title">Author: Duc Huynh - まさのり</p>
@@ -25,7 +24,6 @@ const Home = () => (
       </li>
       <li className="item">
         <Link className="link" to={AppRoutes.operator.path}>
-          {" "}
           Operators
         </Link>
       </li>
@@ -33,4 +31,4 @@ const Home = () => (
   </div>
 );
 
-export default Home;
+export default NavBar;

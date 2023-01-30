@@ -1,0 +1,34 @@
+.Home {
+    .title {
+        font-weight: bold;
+        font-size: 50px;
+        margin: 20px 0 0 0;
+    }
+
+    .sub-title {
+        margin: 0;
+        font-size: 30px;
+        color: gray;
+    }
+
+    .content-list {
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+
+        .item {
+            background-color: #d81b60;
+
+            margin: 0 10px 0 10px;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+
+            .link {
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+}
