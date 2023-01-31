@@ -61,7 +61,6 @@ const StartOneFromAnotherPromise = () => {
     console.time("getCompanies");
     await httpService
       .get("company")
-      // .then((res) => LOMap(res.data, mapCompanyData))
       .then((res) => {
         setCompanies(res.data);
         console.timeEnd("getCompanies");

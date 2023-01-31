@@ -1,3 +1,5 @@
+import CombineAsyncResults from "../components/combineAsyncResults/combineAsyncResults";
+import CombineAsyncResultsRxJs from "../components/combineAsyncResults/combineAsyncResultsRxJS/combineAsyncResultsRxJS";
 import Layout from "../components/Layout/Layout";
 import StartOneFromAnother from "../components/StartOneFromAnother/StartOneFromAnother";
 import StartOneFromAnotherPromise from "../components/StartOneFromAnother/StartOneFromAnotherPromise/StartOneFromAnotherPromise";
@@ -63,7 +65,21 @@ export const AppRoutes = {
   combineAsyncResults: {
     path: `/${PAGE_PATH_NAME.async}/${PAGE_PATH_NAME.combineAsyncResults}`,
     element: (
-      <Layout children={<AsyncProgram children={<StartOneFromAnother />} />} />
+      <Layout children={<AsyncProgram children={<CombineAsyncResults />} />} />
+    ),
+  },
+  combineAsyncResultsRxJS: {
+    path: `/${PAGE_PATH_NAME.async}/${PAGE_PATH_NAME.combineAsyncResults}/${PAGE_PATH_NAME.rxjs}`,
+    element: (
+      <Layout
+        children={
+          <AsyncProgram
+            children={
+              <CombineAsyncResults children={<CombineAsyncResultsRxJs />} />
+            }
+          />
+        }
+      />
     ),
   },
   recalculate: {

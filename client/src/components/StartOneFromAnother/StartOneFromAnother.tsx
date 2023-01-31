@@ -6,7 +6,7 @@ const StartOneFromAnother = (props?: Props) => {
   return (
     <div className="StartOneFromAnother">
       <StartOneFromAnotherNavBar />
-      {props && props.children}
+      <div className="content-container">{props && props.children}</div>
     </div>
   );
 };
