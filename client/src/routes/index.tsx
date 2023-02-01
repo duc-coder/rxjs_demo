@@ -1,6 +1,8 @@
 import CombineAsyncResults from "../components/combineAsyncResults/combineAsyncResults";
 import CombineAsyncResultsRxJs from "../components/combineAsyncResults/combineAsyncResultsRxJS/combineAsyncResultsRxJS";
 import Layout from "../components/Layout/Layout";
+import PeriodRecalculateAsyncData from "../components/PeriodRecalculateAsyncData/PeriodRecalculateAsyncData";
+import PeriodRecalculateAsyncDataRxJs from "../components/PeriodRecalculateAsyncData/PeriodRecalculateAsyncDataRxJS/PeriodRecalculateAsyncDataRxJS";
 import StartOneFromAnother from "../components/StartOneFromAnother/StartOneFromAnother";
 import StartOneFromAnotherPromise from "../components/StartOneFromAnother/StartOneFromAnotherPromise/StartOneFromAnotherPromise";
 import StartOneFromAnotherRxJs from "../components/StartOneFromAnother/StartOneFromAnotherRxJS/StartOneFromAnotherRxJS";
@@ -82,10 +84,58 @@ export const AppRoutes = {
       />
     ),
   },
+  combineAsyncResultsPromise: {
+    path: `/${PAGE_PATH_NAME.async}/${PAGE_PATH_NAME.combineAsyncResults}/${PAGE_PATH_NAME.promise}`,
+    element: (
+      <Layout
+        children={
+          <AsyncProgram
+            children={
+              <CombineAsyncResults children={<CombineAsyncResultsRxJs />} />
+            }
+          />
+        }
+      />
+    ),
+  },
   recalculate: {
     path: `/${PAGE_PATH_NAME.async}/${PAGE_PATH_NAME.recalculate}`,
     element: (
-      <Layout children={<AsyncProgram children={<StartOneFromAnother />} />} />
+      <Layout
+        children={<AsyncProgram children={<PeriodRecalculateAsyncData />} />}
+      />
+    ),
+  },
+  recalculateRxJS: {
+    path: `/${PAGE_PATH_NAME.async}/${PAGE_PATH_NAME.recalculate}/${PAGE_PATH_NAME.rxjs}`,
+    element: (
+      <Layout
+        children={
+          <AsyncProgram
+            children={
+              <PeriodRecalculateAsyncData
+                children={<PeriodRecalculateAsyncDataRxJs />}
+              />
+            }
+          />
+        }
+      />
+    ),
+  },
+  recalculatePromise: {
+    path: `/${PAGE_PATH_NAME.async}/${PAGE_PATH_NAME.recalculate}/${PAGE_PATH_NAME.promise}`,
+    element: (
+      <Layout
+        children={
+          <AsyncProgram
+            children={
+              <PeriodRecalculateAsyncData
+                children={<PeriodRecalculateAsyncDataRxJs />}
+              />
+            }
+          />
+        }
+      />
     ),
   },
   rxjs: {

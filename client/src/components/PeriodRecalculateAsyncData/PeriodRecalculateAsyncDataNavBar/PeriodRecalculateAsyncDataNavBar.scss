@@ -1,0 +1,22 @@
+.PeriodRecalculateAsyncDataNavBar {
+  .content-list {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+
+    .item {
+      background-color: #552989;
+
+      margin: 0 10px 0 10px;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+
+      .link {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+}

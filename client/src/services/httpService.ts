@@ -11,8 +11,10 @@ export class HttpService {
     baseURL: `${SERVER_BASE_URL}${API_PREFIX}`,
     timeout: REQUEST_TIME_MAX,
     headers: {
+      // "Access-Control-Allow-Headers": "Content-Type",
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
+      // "Access-Control-Allow-Credentials": "true",
+      // "Access-Control-Allow-Origin": "*",
     },
   });
 
