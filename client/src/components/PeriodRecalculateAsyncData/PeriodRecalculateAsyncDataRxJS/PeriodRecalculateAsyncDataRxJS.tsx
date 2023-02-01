@@ -18,10 +18,12 @@ interface IBitcoinData {
 const PeriodRecalculateAsyncDataRxJs = () => {
   const USD = "USD";
   const M15 = "15m";
+  const initUsdPrice = "22984.7";
 
   const [usdPrice, setUsdPrice] = useState<number>(0);
   const [changedUsdPrice, setChangedUsdPrice] = useState<string>("");
   const [timeStamp, setTimeStamp] = useState<string>();
+  const [color, setColor] = useState<string>("red");
 
   useEffect(() => {
     console.log("1");
@@ -46,8 +48,15 @@ const PeriodRecalculateAsyncDataRxJs = () => {
 
   useEffect(() => {
     usdPrice &&
-      setChangedUsdPrice(Number(usdPrice - Number(changedUsdPrice)).toFixed(1));
+      setChangedUsdPrice(Number(usdPrice - Number(initUsdPrice)).toFixed(2));
   }, [usdPrice]);
+
+  useEffect(() => {
+    console.log("==================");
+    console.log(changedUsdPrice, Number(changedUsdPrice) > 0);
+    console.log("==================");
+    Number(changedUsdPrice) > 0 ? setColor("green") : setColor("red");
+  }, [changedUsdPrice]);
 
   const getBitcoinData = (intervalTime: number) => {
     return defer(() =>
@@ -63,7 +72,7 @@ const PeriodRecalculateAsyncDataRxJs = () => {
   };
   return (
     <div className="PeriodRecalculateAsyncDataRxJs">
-      <p className="currency-row">
+      <p className={`currency-row ${color}`}>
         Time: {timeStamp} | {USD} price: {usdPrice} ({changedUsdPrice})
       </p>
     </div>
